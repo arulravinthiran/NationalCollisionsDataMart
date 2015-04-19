@@ -1,0 +1,30 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  Table [dbo].[Tbl_data_Vehicle]    Script Date: 12/09/2014 23:44:33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Tbl_data_Vehicle](
+	[date_xf] [datetime] NOT NULL,
+	[vehicle_id] [int] NOT NULL,
+	[vehicle_sequence_number] [varchar](255) NOT NULL,
+	[vehicle_type] [varchar](max) NOT NULL,
+	[vehicle_model_year] [varchar](255) NOT NULL,
+ CONSTRAINT [PK_Tbl_data_Vehicle] PRIMARY KEY CLUSTERED 
+(
+	[vehicle_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+

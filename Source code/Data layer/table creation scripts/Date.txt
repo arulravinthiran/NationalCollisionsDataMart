@@ -1,0 +1,35 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  Table [dbo].[Tbl_data_date]    Script Date: 12/09/2014 23:43:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_data_date](
+	[date_id] [int] NOT NULL,
+	[day_of_week] [nvarchar](50) NOT NULL,
+	[day_name] [nvarchar](50) NOT NULL,
+	[day_abbrev] [nvarchar](50) NOT NULL,
+	[weekday_flag] [nvarchar](50) NOT NULL,
+	[month] [nvarchar](50) NOT NULL,
+	[month_num_overall] [int] NOT NULL,
+	[month_name] [nvarchar](50) NOT NULL,
+	[month_abbrev] [nvarchar](50) NOT NULL,
+	[quarter] [int] NOT NULL,
+	[year] [int] NOT NULL,
+	[yearmo] [int] NOT NULL,
+	[fiscal_month] [int] NOT NULL,
+	[fiscal_quarter] [int] NOT NULL,
+	[fiscal_year] [int] NOT NULL,
+	[season] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Tbl_data_date] PRIMARY KEY CLUSTERED 
+(
+	[date_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

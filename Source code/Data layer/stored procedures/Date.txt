@@ -1,0 +1,56 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_data_date]    Script Date: 12/09/2014 23:45:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[msp_data_date]
+AS
+BEGIN
+--insert into [DW_DATA].[dbo].[Tbl_data_date]
+INSERT INTO [DW_DATA].[dbo].[Tbl_data_date]
+           ([date_id]
+           ,[day_of_week]
+           ,[day_name]
+           ,[day_abbrev]
+           ,[weekday_flag]
+           ,[month]
+           ,[month_num_overall]
+           ,[month_name]
+           ,[month_abbrev]
+           ,[quarter]
+           ,[year]
+           ,[yearmo]
+           ,[fiscal_month]
+           ,[fiscal_quarter]
+           ,[fiscal_year])
+   --Select values from DW_STAGING_DATE INTO DW_DATA_DATE         
+SELECT DISTINCT 
+			CAST(date_id as int) as date_id
+			,[day_of_week]
+           ,[day_name]
+           ,[day_abbrev]
+           ,[weekday_flag]
+           ,[month]
+           ,[month_num_overall]
+           ,[month_name]
+           ,[month_abbrev]
+           ,[quarter]
+           ,[year]
+           ,[yearmo]
+           ,[fiscal_month]
+           ,[fiscal_quarter]
+           ,[fiscal_year]
+FROM DW_STAGING.dbo.tbl_staging_date ORDER BY date_id
+
+
+END
+
+GO
+

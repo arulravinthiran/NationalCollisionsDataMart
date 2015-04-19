@@ -1,0 +1,371 @@
+<Create xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+    <ParentObject>
+        <DatabaseID>National Collisions Data Mart</DatabaseID>
+    </ParentObject>
+    <ObjectDefinition>
+        <DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200">
+            <ID>dvNationalCollisionsDataMart</ID>
+            <Name>dsvNationalCollisionsDataMart</Name>
+            <Annotations>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                    <Value>true</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+                    <Value>_ALL_TABLES_</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+                    <Value>true</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+                    <Value>
+                        <Layouts xmlns="">
+                            <Diagram>
+                                <Name>_ALL_TABLES_</Name>
+                                <DiagramLayout>
+                                    <dds>
+                                        <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1562" scrolltop="1672" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="21564" y="10927" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                            <font>
+                                                <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                                            </font>
+                                            <mouseicon>
+                                                <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                            </mouseicon>
+                                        </diagram>
+                                        <layoutmanager>
+                                            <ddsxmlobj />
+                                        </layoutmanager>
+                                        <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Collision" left="20" top="7902" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="6033" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobjectstreaminitwrapper binary="00080000911700009b0f0000" />
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dbo_Tbl_MIS_Collision" vartype="8" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <shape groupshapeid="0" groupnode="0" />
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Date" left="9829" top="0" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3651" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobjectstreaminitwrapper binary="00080000430e000088130000" />
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dbo_Tbl_MIS_Date" vartype="8" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <shape groupshapeid="0" groupnode="0" />
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Fact" left="8453" top="7400" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="6403" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobjectstreaminitwrapper binary="000800000319000088130000" />
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dbo_Tbl_MIS_Fact" vartype="8" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <shape groupshapeid="0" groupnode="0" />
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Passenger" left="17256" top="7902" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="5001" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobjectstreaminitwrapper binary="00080000891300009b0f0000" />
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dbo_Tbl_MIS_Passenger" vartype="8" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <shape groupshapeid="0" groupnode="0" />
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Vehicle" left="9352" top="14800" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="4604" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobjectstreaminitwrapper binary="00080000fc110000a50a0000" />
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dbo_Tbl_MIS_Vehicle" vartype="8" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <shape groupshapeid="0" groupnode="0" />
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="MSDDS.Polyline" left="11255" top="12100" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobj>
+                                                    <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                                </ddsxmlobj>
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Vehicle]" vartype="8" />
+                                                    <property name="Virtual" value="0" vartype="11" />
+                                                    <property name="VisibleAP" value="0" vartype="3" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="3" sourceattachpoint="8" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                                <point x="11654" y="14800" />
+                                                <point x="11654" y="12400" />
+                                            </connector>
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="MSDDS.Polyline" left="5753" top="9500" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobj>
+                                                    <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                                </ddsxmlobj>
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Collision]" vartype="8" />
+                                                    <property name="Virtual" value="0" vartype="11" />
+                                                    <property name="VisibleAP" value="0" vartype="3" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="29" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                                <point x="6053" y="9899" />
+                                                <point x="7253" y="9899" />
+                                                <point x="7253" y="9900" />
+                                                <point x="8453" y="9900" />
+                                            </connector>
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="MSDDS.Polyline" left="11255" top="4501" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobj>
+                                                    <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                                </ddsxmlobj>
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Date]" vartype="8" />
+                                                    <property name="Virtual" value="0" vartype="11" />
+                                                    <property name="VisibleAP" value="0" vartype="3" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="7" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                                <point x="11654" y="5000" />
+                                                <point x="11654" y="7400" />
+                                            </connector>
+                                        </ddscontrol>
+                                        <ddscontrol controlprogid="MSDDS.Polyline" left="14556" top="9500" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                            <control>
+                                                <ddsxmlobj>
+                                                    <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                                </ddsxmlobj>
+                                            </control>
+                                            <layoutobject>
+                                                <ddsxmlobj>
+                                                    <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Passenger]" vartype="8" />
+                                                    <property name="Virtual" value="0" vartype="11" />
+                                                    <property name="VisibleAP" value="0" vartype="3" />
+                                                </ddsxmlobj>
+                                            </layoutobject>
+                                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="24" destattachpoint="31" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                                <point x="17256" y="9899" />
+                                                <point x="16056" y="9899" />
+                                                <point x="16056" y="9900" />
+                                                <point x="14856" y="9900" />
+                                            </connector>
+                                        </ddscontrol>
+                                    </dds>
+                                </DiagramLayout>
+                                <ShowRelationshipNames>False</ShowRelationshipNames>
+                                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                                <DiagramViewPortLeft>-1562</DiagramViewPortLeft>
+                                <DiagramViewPortTop>1672</DiagramViewPortTop>
+                                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                                <DiagramBoundingTop>0</DiagramBoundingTop>
+                                <DiagramZoom>75</DiagramZoom>
+                            </Diagram>
+                        </Layouts>
+                    </Value>
+                </Annotation>
+            </Annotations>
+            <DataSourceID>dsMISFact</DataSourceID>
+            <Schema>
+                <xs:schema id="dvNationalCollisionsDataMart" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+                    <xs:element name="dvNationalCollisionsDataMart" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+                        <xs:complexType>
+                            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="dbo_Tbl_MIS_Collision" msprop:FriendlyName="Tbl_MIS_Collision" msprop:DbSchemaName="dbo" msprop:DbTableName="Tbl_MIS_Collision" msprop:TableType="Table">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="collision_key" msprop:FriendlyName="collision_key" msprop:DbColumnName="collision_key" type="xs:int" />
+                                            <xs:element name="collision_configuration" msprop:FriendlyName="collision_configuration" msprop:DbColumnName="collision_configuration" type="xs:string" />
+                                            <xs:element name="collision_road_alignment_configuration" msprop:FriendlyName="collision_road_alignment_configuration" msprop:DbColumnName="collision_road_alignment_configuration" type="xs:string" />
+                                            <xs:element name="collision_road_surface_configuration" msprop:FriendlyName="collision_road_surface_configuration" msprop:DbColumnName="collision_road_surface_configuration" type="xs:string" />
+                                            <xs:element name="collision_roadway_configuration" msprop:FriendlyName="collision_roadway_configuration" msprop:DbColumnName="collision_roadway_configuration" type="xs:string" />
+                                            <xs:element name="collision_traffic_control_configuration" msprop:FriendlyName="collision_traffic_control_configuration" msprop:DbColumnName="collision_traffic_control_configuration" type="xs:string" />
+                                            <xs:element name="collision_weather_configuration" msprop:FriendlyName="collision_weather_configuration" msprop:DbColumnName="collision_weather_configuration" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="dbo_Tbl_MIS_Date" msprop:FriendlyName="Tbl_MIS_Date" msprop:DbSchemaName="dbo" msprop:DbTableName="Tbl_MIS_Date" msprop:TableType="Table">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="date_key" msprop:FriendlyName="date_key" msprop:DbColumnName="date_key" type="xs:int" />
+                                            <xs:element name="day_of_week" msprop:FriendlyName="day_of_week" msprop:DbColumnName="day_of_week" type="xs:int" />
+                                            <xs:element name="day_name" msprop:FriendlyName="day_name" msprop:DbColumnName="day_name">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="day_abbrev" msprop:FriendlyName="day_abbrev" msprop:DbColumnName="day_abbrev">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="weekday_flag" msprop:FriendlyName="weekday_flag" msprop:DbColumnName="weekday_flag">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="month" msprop:FriendlyName="month" msprop:DbColumnName="month" type="xs:int" />
+                                            <xs:element name="month_num_overall" msprop:FriendlyName="month_num_overall" msprop:DbColumnName="month_num_overall" type="xs:int" />
+                                            <xs:element name="month_name" msprop:FriendlyName="month_name" msprop:DbColumnName="month_name">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="month_abbrev" msprop:FriendlyName="month_abbrev" msprop:DbColumnName="month_abbrev">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="quarter" msprop:FriendlyName="quarter" msprop:DbColumnName="quarter" type="xs:int" />
+                                            <xs:element name="year" msprop:FriendlyName="year" msprop:DbColumnName="year" type="xs:int" />
+                                            <xs:element name="yearmo" msprop:FriendlyName="yearmo" msprop:DbColumnName="yearmo" type="xs:int" />
+                                            <xs:element name="fiscal_month" msprop:FriendlyName="fiscal_month" msprop:DbColumnName="fiscal_month" type="xs:int" />
+                                            <xs:element name="fiscal_quarter" msprop:FriendlyName="fiscal_quarter" msprop:DbColumnName="fiscal_quarter" type="xs:int" />
+                                            <xs:element name="fiscal_year" msprop:FriendlyName="fiscal_year" msprop:DbColumnName="fiscal_year" type="xs:int" />
+                                            <xs:element name="season_name" msprop:FriendlyName="season_name" msprop:DbColumnName="season_name">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="50" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="season" msprop:FriendlyName="season" msprop:DbColumnName="season" type="xs:int" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="dbo_Tbl_MIS_Fact" msprop:FriendlyName="Tbl_MIS_Fact" msprop:DbSchemaName="dbo" msprop:DbTableName="Tbl_MIS_Fact" msprop:TableType="Table">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="date_key" msprop:FriendlyName="date_key" msprop:DbColumnName="date_key" type="xs:int" />
+                                            <xs:element name="passenger_key" msprop:FriendlyName="passenger_key" msprop:DbColumnName="passenger_key" type="xs:int" />
+                                            <xs:element name="collision_key" msprop:FriendlyName="collision_key" msprop:DbColumnName="collision_key" type="xs:int" />
+                                            <xs:element name="vehicle_key" msprop:FriendlyName="vehicle_key" msprop:DbColumnName="vehicle_key" type="xs:int" />
+                                            <xs:element name="fact_collision_hour_description" msprop:FriendlyName="fact_collision_hour_description" msprop:DbColumnName="fact_collision_hour_description" type="xs:string" />
+                                            <xs:element name="fact_collision_severity_description" msprop:FriendlyName="fact_collision_severity_description" msprop:DbColumnName="fact_collision_severity_description" type="xs:string" />
+                                            <xs:element name="fact_collision_no_of_vehicles_description" msprop:FriendlyName="fact_collision_no_of_vehicles_description" msprop:DbColumnName="fact_collision_no_of_vehicles_description" type="xs:string" />
+                                            <xs:element name="fact_medical_treatment_flag" msprop:FriendlyName="fact_medical_treatment_flag" msprop:DbColumnName="fact_medical_treatment_flag" type="xs:string" />
+                                            <xs:element name="fact_safety_device_flag" msprop:FriendlyName="fact_safety_device_flag" msprop:DbColumnName="fact_safety_device_flag" type="xs:string" />
+                                            <xs:element name="fact_safety_device" msprop:FriendlyName="fact_safety_device" msprop:DbColumnName="fact_safety_device" type="xs:int" />
+                                            <xs:element name="fact_medical_treatment" msprop:FriendlyName="fact_medical_treatment" msprop:DbColumnName="fact_medical_treatment" type="xs:int" />
+                                            <xs:element name="fact_collision_severity" msprop:FriendlyName="fact_collision_severity" msprop:DbColumnName="fact_collision_severity" type="xs:int" />
+                                            <xs:element name="fact_collision_no_of_vehicles" msprop:FriendlyName="fact_collision_no_of_vehicles" msprop:DbColumnName="fact_collision_no_of_vehicles" type="xs:int" />
+                                            <xs:element name="fact_collision_hour" msprop:FriendlyName="fact_collision_hour" msprop:DbColumnName="fact_collision_hour" type="xs:int" />
+                                            <xs:element name="fact_fatal_collision_flag" msprop:FriendlyName="fact_fatal_collision_flag" msprop:DbColumnName="fact_fatal_collision_flag" type="xs:int" minOccurs="0" />
+                                            <xs:element name="fact_non_fatal_collision_flag" msprop:FriendlyName="fact_non_fatal_collision_flag" msprop:DbColumnName="fact_non_fatal_collision_flag" type="xs:int" minOccurs="0" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="dbo_Tbl_MIS_Passenger" msprop:FriendlyName="Tbl_MIS_Passenger" msprop:DbSchemaName="dbo" msprop:DbTableName="Tbl_MIS_Passenger" msprop:TableType="Table">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="passenger_key" msprop:FriendlyName="passenger_key" msprop:DbColumnName="passenger_key" type="xs:int" />
+                                            <xs:element name="passenger_sequence_number" msprop:FriendlyName="passenger_sequence_number" msprop:DbColumnName="passenger_sequence_number" type="xs:string" />
+                                            <xs:element name="passenger_gender" msprop:FriendlyName="passenger_gender" msprop:DbColumnName="passenger_gender" type="xs:string" />
+                                            <xs:element name="passenger_age" msprop:FriendlyName="passenger_age" msprop:DbColumnName="passenger_age" type="xs:string" />
+                                            <xs:element name="passenger_age_range" msprop:FriendlyName="passenger_age_range" msprop:DbColumnName="passenger_age_range" type="xs:string" />
+                                            <xs:element name="passenger_position" msprop:FriendlyName="passenger_position" msprop:DbColumnName="passenger_position" type="xs:string" />
+                                            <xs:element name="passenger_road_user_class" msprop:FriendlyName="passenger_road_user_class" msprop:DbColumnName="passenger_road_user_class" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="dbo_Tbl_MIS_Vehicle" msprop:FriendlyName="Tbl_MIS_Vehicle" msprop:DbSchemaName="dbo" msprop:DbTableName="Tbl_MIS_Vehicle" msprop:TableType="Table">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="vehicle_key" msprop:FriendlyName="vehicle_key" msprop:DbColumnName="vehicle_key" type="xs:int" />
+                                            <xs:element name="vehicle_sequence_number" msprop:FriendlyName="vehicle_sequence_number" msprop:DbColumnName="vehicle_sequence_number">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="255" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="vehicle_type" msprop:FriendlyName="vehicle_type" msprop:DbColumnName="vehicle_type" type="xs:string" />
+                                            <xs:element name="vehicle_model_year" msprop:FriendlyName="vehicle_model_year" msprop:DbColumnName="vehicle_model_year">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="255" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:complexType>
+                        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Collision" />
+                            <xs:field xpath="collision_key" />
+                        </xs:unique>
+                        <xs:unique name="dbo_Tbl_MIS_Date_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Date" />
+                            <xs:field xpath="date_key" />
+                        </xs:unique>
+                        <xs:unique name="dbo_Tbl_MIS_Fact_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Fact" />
+                            <xs:field xpath="date_key" />
+                            <xs:field xpath="passenger_key" />
+                            <xs:field xpath="collision_key" />
+                            <xs:field xpath="vehicle_key" />
+                        </xs:unique>
+                        <xs:unique name="dbo_Tbl_MIS_Passenger_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Passenger" />
+                            <xs:field xpath="passenger_key" />
+                        </xs:unique>
+                        <xs:unique name="dbo_Tbl_MIS_Vehicle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Vehicle" />
+                            <xs:field xpath="vehicle_key" />
+                        </xs:unique>
+                        <xs:keyref name="FK_Tbl_MIS_Fact_Tbl_MIS_Vehicle" refer="dbo_Tbl_MIS_Vehicle_Constraint1">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Fact" />
+                            <xs:field xpath="vehicle_key" />
+                        </xs:keyref>
+                        <xs:keyref name="FK_Tbl_MIS_Fact_Tbl_MIS_Collision" refer="Constraint1">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Fact" />
+                            <xs:field xpath="collision_key" />
+                        </xs:keyref>
+                        <xs:keyref name="FK_Tbl_MIS_Fact_Tbl_MIS_Date" refer="dbo_Tbl_MIS_Date_Constraint1">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Fact" />
+                            <xs:field xpath="date_key" />
+                        </xs:keyref>
+                        <xs:keyref name="FK_Tbl_MIS_Fact_Tbl_MIS_Passenger" refer="dbo_Tbl_MIS_Passenger_Constraint1">
+                            <xs:selector xpath=".//dbo_Tbl_MIS_Fact" />
+                            <xs:field xpath="passenger_key" />
+                        </xs:keyref>
+                    </xs:element>
+                </xs:schema>
+                <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+            </Schema>
+        </DataSourceView>
+    </ObjectDefinition>
+</Create>

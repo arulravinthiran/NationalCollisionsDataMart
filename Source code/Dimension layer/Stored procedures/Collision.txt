@@ -1,0 +1,54 @@
+USE [DW_NCDM]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_NCDM_collision]    Script Date: 12/10/2014 00:46:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROC [dbo].[msp_NCDM_collision] 
+AS
+BEGIN
+
+--generate surrogate key for every vehicle_id
+
+INSERT INTO DW_MIS.dbo.Tbl_MIS_Lkp_collision(collision_id)
+
+SELECT tdCln.collision_id
+FROM DW_DATA.dbo.Tbl_data_Collision tdCln LEFT JOIN
+ DW_MIS.dbo.Tbl_MIS_Lkp_collision tmlkCln
+ 
+ ON tdCln.collision_id = tmlkCln.collision_id
+ 
+ WHERE tdCln.collision_id IS NOT NULL AND tmlkCln.collision_id  is NULL
+ 
+ --insert records into collision dimension
+ INSERT INTO DW_MIS.dbo.Tbl_MIS_collision(collision_key,collision_configuration,
+ collision_road_alignment_configuration,collision_road_surface_configuration,collision_roadway_configuration,
+ collision_traffic_control_configuration,collision_weather_configuration)
+
+SELECT  tmlkCln.collision_key, tdCln.collision_configuration, 
+ tdCln.collision_road_alignment_configuration, tdCln.collision_road_surface_configuration, tdCln.collision_roadway_configuration,
+ tdCln.collision_traffic_control_configuration, tdCln.collision_weather_configuration
+
+
+FROM DW_DATA.dbo.Tbl_data_Collision tdCln LEFT JOIN DW_MIS.dbo.Tbl_MIS_Lkp_collision tmlkCln
+ ON tdCln.collision_id = tmlkCln.collision_id LEFT JOIN DW_MIS.dbo.Tbl_MIS_collision tmCln
+  ON tmCln.collision_key = tmlkCln.collision_key
+ 
+ WHERE tdCln.collision_id IS NOT NULL AND tmCln.collision_key IS NULL AND tmlkCln.collision_key IS NOT NULL
+
+
+END
+
+
+
+
+
+
+GO
+

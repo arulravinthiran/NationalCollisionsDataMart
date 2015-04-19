@@ -1,0 +1,152 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_data_vehicle]    Script Date: 12/09/2014 23:46:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+ 
+CREATE PROCEDURE [dbo].[msp_data_vehicle] AS
+
+BEGIN
+
+--insert records from master table in staging layer to tbl_data_vehicle
+INSERT INTO DW_DATA.dbo.Tbl_data_Vehicle(vehicle_id,date_xf,vehicle_sequence_number, vehicle_type, vehicle_model_year)
+
+SELECT    tsVh.vehicle_id, GETDATE() AS date_xf,
+ --clean vehicle sequence number
+         CASE tsVh.vehicle_sequence_number
+          WHEN  'UU' THEN 'Unknown'  
+          WHEN  '99' THEN 'The person is a pedestrian!'
+          ELSE tsVh.vehicle_sequence_number
+          END AS vehicle_sequence_number, 
+          --clean vehicle type     
+         CASE tsVh.vehicle_type
+           WHEN 'UU' THEN 'Unknown'
+           WHEN 'QQ' THEN 'Other vehicles'
+           WHEN 'NN' THEN 'Not Applicable'
+           WHEN 'XX' THEN 'Data refused by the jurisdiction of the collision site!'
+           WHEN '01' THEN 'Light duty vehicle'
+           WHEN '05' THEN 'Panel or cargo van less than or equal to 4536kg GVWR'
+           WHEN '06' THEN 'Other truck or van less than or equal to 4536kg GVWR'
+           WHEN '07' THEN 'Other trucks greater than 4536kg GVWR with or without a trailer'
+           WHEN '08' THEN 'Road tractor with or without a semi-trailer'
+           WHEN '09' THEN 'School bus - standard large size'
+           WHEN '10' THEN 'School bus - small with less than 25 passengers'
+           WHEN '11' THEN 'Urban and intercity bus'
+           WHEN '14' THEN 'Motorcycle and moped'
+           WHEN '16' THEN 'Off-road vehicle'
+           WHEN '17' THEN 'Bicycle'
+           WHEN '18' THEN 'Purpose-built Motorhome excluding pickup campers'
+           WHEN '19' THEN 'Farm equipment'
+           WHEN '20' THEN 'Construction equipment'
+           WHEN '21' THEN 'Fire engine'
+           WHEN '22' THEN 'Snow mobile'
+           WHEN '23' THEN 'Street car'
+           END AS vehicle_type, 
+           --clean vehicle model year
+         CASE tsVh.vehicle_model_year
+           WHEN  'UUUU' THEN 'Unknown'
+           WHEN  'NNNN' THEN 'Not Applicable'
+           WHEN  'XXXX' THEN 'Data refused by the jurisdiction of the collision site!'
+           ELSE tsVh.vehicle_model_year
+           END AS vehicle_model_year 
+ FROM DW_STAGING.dbo.Tbl_staging_Vehicle tsVh LEFT JOIN DW_DATA.dbo.Tbl_data_Vehicle tdVh
+  ON tsVh.vehicle_id= tdVh.vehicle_id
+ WHERE tdVh.vehicle_id IS NULL AND tsVh.vehicle_id IS NOT NULL 
+ 
+
+--log these changes in the log table
+
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_sequence_number','All corresponding records ','99','The person is a pedestrian!')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_sequence_number','All corresponding records ','UU','Unknown')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','UU','Unknown')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','QQ','Other vehicles')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','NN','Not Applicable')
+              
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','XX','Data refused by the jurisdiction of the collision site!')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','01','Light duty vehicles')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','05','Panel or cargo van less than or equal to 4536kg GVWR')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','06','Other truck or van less than or equal to 4536kg GVWR')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','07','Other trucks greater than 4536kg GVWR with or without a trailer')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','08','Road tractor with or without a semi-trailer')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','09','School bus - standard large size')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','10','School bus - small with less than 25 passengers')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','11','Light duty vehicles')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','14','Motorcycle and moped')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','16','Off-road vehicle')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','17','Bicycle')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','18','Purpose-built Motorhome excluding pickup campers')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','19','Light duty vehicles')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','20','Farm equipment')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','21','Fire engine')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','22','Snow mobile')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_type','All corresponding records ','23','Street car')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_model_year','All corresponding records ','UUUU','Unknown')
+  
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_model_year','All corresponding records ','NNNN','Not Applicable')
+   
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Vehicle','vehicle_model_year','Corresponding records','XXXX','Data refused by the jurisdiction of the collision site!')
+
+
+
+
+END
+
+
+GO
+

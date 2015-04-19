@@ -1,0 +1,26 @@
+USE [DW_NCDM]
+GO
+
+/****** Object:  Table [dbo].[Tbl_NCDM_Collision]    Script Date: 12/09/2014 23:46:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_NCDM_Collision](
+	[collision_key] [int] NOT NULL,
+	[collision_configuration] [nvarchar](max) NOT NULL,
+	[collision_road_alignment_configuration] [nvarchar](max) NOT NULL,
+	[collision_road_surface_configuration] [nvarchar](max) NOT NULL,
+	[collision_roadway_configuration] [nvarchar](max) NOT NULL,
+	[collision_traffic_control_configuration] [nvarchar](max) NOT NULL,
+	[collision_weather_configuration] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Tbl_MIS_Collision] PRIMARY KEY CLUSTERED 
+(
+	[collision_key] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

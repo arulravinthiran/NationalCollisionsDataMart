@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>National Collisions Data Mart</Database>
+    <Server>localhost</Server>
+    <ConnectionString>DataSource=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>9MaJPolJ2vdE7M5xbjOfng==09-Dec-14 4:28:53 PM09-Dec-14 3:02:40 AM</TimeStamp>
+        <ID>
+          <String>dsMISFact</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>pwa4dq8R8PD1Kv9+AtgRhA==09-Dec-14 4:27:41 PM09-Dec-14 3:03:53 AM</TimeStamp>
+        <ID>
+          <String>dvNationalCollisionsDataMart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IOFg+g3YCeFKZ4qt1/BhTA==09-Dec-14 4:34:20 PM09-Dec-14 3:04:42 AM</TimeStamp>
+        <ID>
+          <String>DimensionDate</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>yG4bdly36kXJ05EBVHme/A==09-Dec-14 4:26:13 PM09-Dec-14 3:06:39 AM</TimeStamp>
+        <ID>
+          <String>Tbl MIS Passenger</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>WuGMyza59cTqf32OExYf1Q==09-Dec-14 4:26:43 PM09-Dec-14 3:06:39 AM</TimeStamp>
+        <ID>
+          <String>Tbl MIS Collision</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>LFrFvIBWd9EwT/w/R/X+UA==09-Dec-14 4:26:54 PM09-Dec-14 3:06:39 AM</TimeStamp>
+        <ID>
+          <String>Tbl MIS Vehicle</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>PR7KORr3TPoMiBnoX/d7RA==09-Dec-14 4:49:24 PM09-Dec-14 3:06:39 AMqAEDFitDfLzQLtBdobENBQ==09-Dec-14 3:06:40 AM09-Dec-14 3:06:39 AM</TimeStamp>
+        <ID>
+          <String>cbeNationalCollisionsDataMart</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>6TOYA0bM9Dl5XW1ypU8lxQ==04-Dec-14 11:56:10 PM04-Dec-14 11:56:05 PM</TimeStamp>
+      <ID>
+        <String>National Collisions Data Mart</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2014-12-09T22:04:31.57Z</LastDeployed>
+</DeploymentSnapshot>

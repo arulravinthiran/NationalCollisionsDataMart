@@ -1,0 +1,205 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_data_Collision]    Script Date: 12/09/2014 23:44:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+/* Stored Procedure for the MAIN Collision Table to get right data in data layer from data staging layer
+
+@author = Arulprakasam Ravinthiran
+
+*/
+
+
+CREATE PROC [dbo].[msp_data_Collision] AS
+
+BEGIN
+
+--insert records from master table in staging layer to tbl_data_Collision
+
+INSERT INTO DW_DATA.dbo.Tbl_data_Collision(date_xf,collision_id,collision_configuration,
+collision_road_alignment_configuration, collision_road_surface_configuration,collision_roadway_configuration,
+collision_traffic_control_configuration,collision_weather_configuration )
+
+  SELECT  DISTINCT GETDATE() AS date_xf, tsMstr.collision_id, 
+
+        -- START OF COLLISION_CONFIGURATION
+
+         CASE tsMstr.collision_configuration
+		  
+		  --- SINGLE VEHICLE IN MOTION -- doubt
+		  
+		  WHEN  '01' THEN 'Hit a moving object'  
+          WHEN  '02' THEN 'Hit a stationary object'
+		  WHEN  '03' THEN  'Ran off left shoulder'
+		  WHEN  '04' THEN  'Ran off right shoulder'
+          WHEN  '05' THEN  'Rollover on roadway'
+		  WHEN  '06' THEN  'Any other single vehicle collision configuration'
+		  
+		  ----TWO VEHICLES IN MOTION - SAME DIRECTION
+
+		  WHEN  '21' THEN  'Rear-end collision'
+		  WHEN  '22' THEN  'Side swipe'
+		  WHEN  '23' THEN  'One vehicle passing to the left of the other, or left turn conflict'
+		  WHEN  '24'THEN  'One vehicle passing to the right of the other, or right turn conflict'
+		  WHEN  '25'THEN  'Any other two vehicle - same direction of travel configuration'
+
+		  --- TWO VEHICLES BUT OPPOSITE DIRECTION
+		  WHEN  '31' THEN  'Head-on collision'
+		  WHEN  '32' THEN  'Approaching side-swipe'
+		  WHEN  '33' THEN  'Left turn across opposing traffic'
+		  WHEN  '34' THEN  'Right turn, including turning conflicts'
+		  WHEN  '35' THEN  'Right angle collision'
+		  WHEN  '36' THEN  'Any other two-vehicle - different direction of travel configuration'
+
+		  ---- Two Vehicles - Hit a Parked Motor Vehicle
+		  WHEN  '41'  THEN 'Hit a Parked motor vehicle'
+		  -------
+
+		  WHEN  'QQ'THEN  'Choice is other than the preceding values'
+		  WHEN  'UU'THEN  'Unknown'
+		  WHEN  'XX'THEN  'Jurisdiction does not provide this data element' 
+		  
+          END AS collision_configuration ,
+
+		  -- END OF COLLISION_CONFIGURATION
+
+		   -- START OF COLLISION_ROAD_ALIGNMENT
+
+       CASE tsMstr.collision_road_alignment_configuration
+		  
+		  WHEN  '1' THEN 'Straight and level'  
+          WHEN  '2' THEN 'Straight with gradient'
+		  WHEN  '3' THEN  'Curved and level'
+		  WHEN  '4' THEN  'Curved with gradient'
+          WHEN  '5' THEN  'Top of hill or gradient'
+		  WHEN  '6' THEN  'Bottom of hill or gradient'
+		  WHEN  'Q'THEN  'Choice is other than the preceding values'
+		  WHEN  'U'THEN  'Unknown'
+		  WHEN  'X'THEN  'Jurisdiction does not provide this data element'  
+		  
+          END AS collision_road_alignment ,
+
+		  -- END OF COLLISION_ROAD_ALIGNMENT
+
+		  -- START OF COLLISION_ROAD_SURFACE
+
+          CASE tsMstr.collision_road_surface_configuration
+		  
+		  WHEN  '1' THEN 'Dry, normal'  
+          WHEN  '2' THEN 'Wet'
+		  WHEN  '3' THEN  'Snow (fresh, loose snow)'
+		  WHEN  '4' THEN  'Slush ,wet snow'
+          WHEN  '5' THEN  'Icy'
+		  WHEN  '6' THEN  'Sand/gravel/dirt'
+		  WHEN  '7' THEN  'Muddy'
+          WHEN  '8' THEN  'Oil'
+		  WHEN  '9' THEN  'Flooded'
+		  WHEN  'Q'THEN  'Choice is other than the preceding values'
+		  WHEN  'U'THEN  'Unknown'
+		  WHEN  'X'THEN  'Jurisdiction does not provide this data element'  
+		  
+          END AS collision_road_surface_configuration ,
+
+		  -- END OF COLLISION_ROAD_SURFACE
+     
+         -- START OF COLLISION_ROAD_CONFIGURATION
+
+         CASE tsMstr.collision_roadway_configuration
+		  
+		  WHEN  '01' THEN 'Non-intersection'  
+          WHEN  '02' THEN 'At an intersection of at least two public roadways'
+		  WHEN  '03' THEN  'Intersection with parking lot entrance/exit, private driveway or laneway'
+		  WHEN  '04' THEN  'Railroad level crossing'
+          WHEN  '05' THEN  'Bridge, overpass, viaduct'
+		  WHEN  '06' THEN  'Tunnel or underpass'
+		  WHEN  '07' THEN  'Passing or climbing lane'
+		  WHEN  '08' THEN  'Ramp'
+		  WHEN  '09' THEN  'Traffic circle'
+		  WHEN  '10'THEN  'Express lane of a freeway system'
+		  WHEN  '11'THEN  'Collector lane of a freeway system'
+		  WHEN  '12'THEN  'Transfer lane of a freeway system'
+		  WHEN  'QQ'THEN  'Choice is other than the preceding values'
+		  WHEN  'UU'THEN  'Unknown'
+		  WHEN  'XX'THEN  'Jurisdiction does not provide this data element'  
+		  
+          END AS collision_road_configuration ,
+
+		  -- END OF COLLISION_ROAD_CONF
+     
+         --- START OF TRAFFIC CONTROL
+
+		 CASE tsMstr.collision_traffic_control_configuration
+		  
+		  WHEN  '01' THEN 'Traffic signals fully operational'  
+          WHEN  '02' THEN 'Traffic signals in flashing mode'
+		  WHEN  '03' THEN  'Stop sign'
+		  WHEN  '04' THEN  'Yield sign'
+          WHEN  '05' THEN  'Warning sign'
+		  WHEN  '06' THEN  'Pedestrian crosswalk'
+		  WHEN  '07' THEN  'Police officer'
+		  WHEN  '08' THEN  'School guard, flagman'
+		  WHEN  '09' THEN  'School crossing'
+		  WHEN  '10' THEN  'Reduced speed zone'   
+		  WHEN  '11' THEN 'No passing zone sign'
+		  WHEN  '12' THEN 'Markings on the road'
+		  WHEN  '13' THEN 'School bus stopped with school bus signal lights flashing'
+		  WHEN  '14' THEN 'School bus stopped with school bus signal lights not flashing'
+		  WHEN  '15' THEN 'Railway crossing with signals, or signals and gates'
+		  WHEN  '16' THEN 'Railway crossing with signs only'
+		  WHEN  '17' THEN 'Control device not specified'
+		  WHEN  '18' THEN 'No control present'
+		  WHEN  'QQ' THEN 'Choice is other than the preceding values'
+		  WHEN  'UU' THEN 'Unknown'
+		  WHEN  'XX' THEN 'Jurisdiction does not provide this data element'
+		  
+          END AS collision_traffic_control,
+
+		  ---- END OF TRAFFIC CONTROL    
+
+		  ---- START OF COLLISION_WEATHER
+
+		  CASE tsMstr.collision_weather_configuration
+		  
+		  WHEN  '1' THEN 'Clear and sunny'  
+          WHEN  '2' THEN 'Overcast,cloudy but no precipitation'
+		  WHEN  '3' THEN  'Raining'
+		  WHEN  '4' THEN  'Snowing,not including drifting snow'
+          WHEN  '5' THEN  'Freezing rain, sleet, hail'
+		  WHEN  '6' THEN  'Visibility limitation'
+		  WHEN  '7' THEN  'Strong wind'
+		  WHEN  'Q' THEN  'Choice is other than the preceding values'
+		  WHEN  'U' THEN  'Unknown'
+		  WHEN  'X' THEN  'Jurisdiction does not provide this data element'  
+		  
+          END AS collision_weather   
+         
+		  -- END OF COLL_WEATHER
+
+-- start of FROM clause
+		
+ FROM DW_STAGING.dbo.Tbl_staging_Collision tsMstr LEFT JOIN DW_DATA.dbo.Tbl_data_Collision tdCln
+
+ ON tsMstr.collision_id = tdCln.collision_id
+
+ -- END of FROM
+
+ -- START OF WHERE
+
+ WHERE tdCln.collision_id IS NULL AND tsMstr.collision_id IS NOT NULL
+ 
+ -- END OF WHERE
+ 
+  
+  END 
+  
+
+
+GO
+

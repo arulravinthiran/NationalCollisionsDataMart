@@ -1,0 +1,35 @@
+USE [DW_STAGING]
+GO
+
+/****** Object:  Table [dbo].[Tbl_staging_date]    Script Date: 12/10/2014 00:49:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_staging_date](
+	[date_id] [nvarchar](255) NOT NULL,
+	[day_of_week] [nvarchar](50) NULL,
+	[day_name] [nvarchar](50) NULL,
+	[day_abbrev] [nvarchar](50) NULL,
+	[weekday_flag] [nvarchar](50) NULL,
+	[month] [nvarchar](50) NULL,
+	[month_num_overall] [int] NULL,
+	[month_name] [nvarchar](50) NULL,
+	[month_abbrev] [nvarchar](50) NULL,
+	[quarter] [int] NULL,
+	[year] [int] NULL,
+	[yearmo] [int] NULL,
+	[fiscal_month] [int] NULL,
+	[fiscal_quarter] [int] NULL,
+	[fiscal_year] [int] NULL,
+	[season] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Tbl_data_date] PRIMARY KEY CLUSTERED 
+(
+	[date_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

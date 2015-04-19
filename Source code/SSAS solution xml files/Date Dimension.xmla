@@ -1,0 +1,599 @@
+<Create xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+    <ParentObject>
+        <DatabaseID>National Collisions Data Mart</DatabaseID>
+    </ParentObject>
+    <ObjectDefinition>
+        <Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200">
+            <ID>DimensionDate</ID>
+            <Name>DimDate</Name>
+            <Annotations>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                    <Value>
+                        <dds xmlns="">
+                            <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1766" scrolltop="-2381" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7832" y="9604" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                <font>
+                                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                                </font>
+                                <mouseicon>
+                                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                </mouseicon>
+                            </diagram>
+                            <layoutmanager>
+                                <ddsxmlobj />
+                            </layoutmanager>
+                            <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Date" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3651" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                <control>
+                                    <ddsxmlobjectstreaminitwrapper binary="00080000430e000088130000" />
+                                </control>
+                                <layoutobject>
+                                    <ddsxmlobj>
+                                        <property name="LogicalObject" value="dbo_Tbl_MIS_Date" vartype="8" />
+                                    </ddsxmlobj>
+                                </layoutobject>
+                                <shape groupshapeid="0" groupnode="0" />
+                            </ddscontrol>
+                        </dds>
+                    </Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                    <Value>true</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                    <Value>false</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                    <Value>true</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                    <Value>-1766</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                    <Value>-2381</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                    <Value>20</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                    <Value>0</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                    <Value>100</Value>
+                </Annotation>
+                <Annotation>
+                    <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+                    <Value>
+                        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+                            <Shapes NodeWidth="146">
+                                <Shape Id="Date Key" Expanded="false">
+                                    <Attributes>
+                                        <Attribute Id="Date Key" />
+                                        <Attribute Id="Day Abbrev" />
+                                        <Attribute Id="Day Of Week" />
+                                        <Attribute Id="Fiscal Month" />
+                                        <Attribute Id="Fiscal Quarter" />
+                                        <Attribute Id="Fiscal Year" />
+                                        <Attribute Id="Month" />
+                                        <Attribute Id="Month Abbrev" />
+                                        <Attribute Id="Month Num Overall" />
+                                        <Attribute Id="Quarter" />
+                                        <Attribute Id="Season" />
+                                        <Attribute Id="Season Name" />
+                                        <Attribute Id="Weekday Flag" />
+                                        <Attribute Id="Yearmo" />
+                                    </Attributes>
+                                    <Position x="20" y="20" />
+                                </Shape>
+                                <Shape Id="Year" Expanded="false">
+                                    <Attributes>
+                                        <Attribute Id="Year" />
+                                    </Attributes>
+                                    <Position x="207" y="20" />
+                                </Shape>
+                                <Shape Id="Month Name" Expanded="false">
+                                    <Attributes>
+                                        <Attribute Id="Month Name" />
+                                    </Attributes>
+                                    <Position x="207" y="68" />
+                                </Shape>
+                                <Shape Id="Day Name" Expanded="false">
+                                    <Attributes>
+                                        <Attribute Id="Day Name" />
+                                    </Attributes>
+                                    <Position x="207" y="116" />
+                                </Shape>
+                            </Shapes>
+                        </DiagramLayout>
+                    </Value>
+                </Annotation>
+            </Annotations>
+            <Source xsi:type="DataSourceViewBinding">
+                <DataSourceViewID>dvNationalCollisionsDataMart</DataSourceViewID>
+            </Source>
+            <ErrorConfiguration>
+                <KeyNotFound>ReportAndStop</KeyNotFound>
+                <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+            </ErrorConfiguration>
+            <Language>1033</Language>
+            <Collation>Latin1_General_CI_AS</Collation>
+            <UnknownMemberName>Unknown</UnknownMemberName>
+            <Attributes>
+                <Attribute>
+                    <ID>Date Key</ID>
+                    <Name>Date Key</Name>
+                    <Usage>Key</Usage>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>date_key</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>date_key</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <AttributeRelationships>
+                        <AttributeRelationship>
+                            <AttributeID>Day Of Week</AttributeID>
+                            <Name>Day Of Week</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Day Name</AttributeID>
+                            <Name>Day Name</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Day Abbrev</AttributeID>
+                            <Name>Day Abbrev</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Weekday Flag</AttributeID>
+                            <Name>Weekday Flag</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Month</AttributeID>
+                            <Name>Month</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Month Num Overall</AttributeID>
+                            <Name>Month Num Overall</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Month Name</AttributeID>
+                            <Name>Month Name</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Month Abbrev</AttributeID>
+                            <Name>Month Abbrev</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Quarter</AttributeID>
+                            <Name>Quarter</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Year</AttributeID>
+                            <Name>Year</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Yearmo</AttributeID>
+                            <Name>Yearmo</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Fiscal Month</AttributeID>
+                            <Name>Fiscal Month</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Fiscal Quarter</AttributeID>
+                            <Name>Fiscal Quarter</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Fiscal Year</AttributeID>
+                            <Name>Fiscal Year</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Season Name</AttributeID>
+                            <Name>Season Name</Name>
+                        </AttributeRelationship>
+                        <AttributeRelationship>
+                            <AttributeID>Season</AttributeID>
+                            <Name>Season</Name>
+                        </AttributeRelationship>
+                    </AttributeRelationships>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Day Of Week</ID>
+                    <Name>Day Of Week</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>day_of_week</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>day_of_week</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Day Name</ID>
+                    <Name>Day Name</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>day_name</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>day_name</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Day Abbrev</ID>
+                    <Name>Day Abbreviation</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>day_abbrev</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>day_abbrev</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Weekday Flag</ID>
+                    <Name>Weekday Flag</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>weekday_flag</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>weekday_flag</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Month</ID>
+                    <Name>Month number</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>month</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>month</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Month Num Overall</ID>
+                    <Name>Month Number Overall</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>month_num_overall</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>month_num_overall</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Month Name</ID>
+                    <Name>Month Name</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>month_name</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>month_name</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Month Abbrev</ID>
+                    <Name>Month Abbreviation</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>month_abbrev</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>month_abbrev</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Quarter</ID>
+                    <Name>Quarter</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>quarter</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>quarter</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Year</ID>
+                    <Name>Year</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>year</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>year</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Yearmo</ID>
+                    <Name>Year month</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>yearmo</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>yearmo</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Fiscal Month</ID>
+                    <Name>Fiscal Month</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>fiscal_month</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>fiscal_month</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Fiscal Quarter</ID>
+                    <Name>Fiscal Quarter</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>fiscal_quarter</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>fiscal_quarter</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Fiscal Year</ID>
+                    <Name>Fiscal Year</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>fiscal_year</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>fiscal_year</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Season Name</ID>
+                    <Name>Season Name</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>WChar</DataType>
+                            <DataSize>50</DataSize>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>season_name</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <DataSize>50</DataSize>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>season_name</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+                <Attribute>
+                    <ID>Season</ID>
+                    <Name>Season number</Name>
+                    <KeyColumns>
+                        <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                                <TableID>dbo_Tbl_MIS_Date</TableID>
+                                <ColumnID>season</ColumnID>
+                            </Source>
+                        </KeyColumn>
+                    </KeyColumns>
+                    <NameColumn>
+                        <DataType>WChar</DataType>
+                        <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_Tbl_MIS_Date</TableID>
+                            <ColumnID>season</ColumnID>
+                        </Source>
+                    </NameColumn>
+                    <OrderBy>Key</OrderBy>
+                </Attribute>
+            </Attributes>
+            <Hierarchies>
+                <Hierarchy>
+                    <ID>Hierarchy</ID>
+                    <Name>DateHierarchy</Name>
+                    <Levels>
+                        <Level>
+                            <ID>Year</ID>
+                            <Name>Year</Name>
+                            <SourceAttributeID>Year</SourceAttributeID>
+                        </Level>
+                        <Level>
+                            <ID>Month Name</ID>
+                            <Name>Month Name</Name>
+                            <SourceAttributeID>Month Name</SourceAttributeID>
+                        </Level>
+                        <Level>
+                            <ID>Day Name</ID>
+                            <Name>Day Name</Name>
+                            <SourceAttributeID>Day Name</SourceAttributeID>
+                        </Level>
+                    </Levels>
+                </Hierarchy>
+            </Hierarchies>
+            <ProactiveCaching>
+                <SilenceInterval>-PT1S</SilenceInterval>
+                <Latency>-PT1S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Source xsi:type="ProactiveCachingInheritedBinding" />
+            </ProactiveCaching>
+        </Dimension>
+    </ObjectDefinition>
+</Create>

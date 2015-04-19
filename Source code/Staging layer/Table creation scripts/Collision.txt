@@ -1,0 +1,27 @@
+USE [DW_STAGING]
+GO
+
+/****** Object:  Table [dbo].[Tbl_staging_Collision]    Script Date: 12/10/2014 00:49:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_staging_Collision](
+	[date_xf] [datetime] NOT NULL,
+	[collision_id] [int] IDENTITY(41000,1) NOT NULL,
+	[collision_configuration] [nvarchar](500) NOT NULL,
+	[collision_road_alignment_configuration] [nvarchar](500) NOT NULL,
+	[collision_road_surface_configuration] [nvarchar](500) NOT NULL,
+	[collision_roadway_configuration] [nvarchar](500) NOT NULL,
+	[collision_traffic_control_configuration] [nvarchar](500) NOT NULL,
+	[collision_weather_configuration] [nvarchar](500) NOT NULL,
+ CONSTRAINT [PK_Tbl_data_Collision] PRIMARY KEY CLUSTERED 
+(
+	[collision_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

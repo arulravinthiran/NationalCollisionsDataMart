@@ -1,0 +1,34 @@
+USE [DW_NCDM]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_NCDM_date]    Script Date: 12/10/2014 00:47:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[msp_NCDM_date] AS
+BEGIN
+
+----truncate table if data already exists
+--TRUNCATE TABLE dbo.Tbl_MIS_Date
+
+--insert date values in the dimensional table
+INSERT INTO DW_MIS.dbo.Tbl_MIS_Date (date_key,date_xf,day_of_week,day_name,day_abbrev,
+ weekday_flag,month,month_num_overall,month_name,month_abbrev,quarter,year,yearmo,fiscal_month,
+ fiscal_quarter,fiscal_year)
+ 
+ SELECT tdDt.date_id, GETDATE(),tdDt.day_of_week,tdDt.day_name,tdDt.day_abbrev,tdDt.weekday_flag,tdDt.month,tdDt.month_num_overall,tdDt.month_name,tdDt.month_abbrev,
+ tdDt.quarter,tdDt.year,tdDt.yearmo,tdDt.fiscal_month,tdDt.fiscal_quarter,tdDt.fiscal_year
+ 
+ FROM DW_DATA.dbo.Tbl_data_date tdDt LEFT JOIN DW_MIS.dbo.Tbl_MIS_Date tmDt
+ ON tdDt.date_id = tmDt.date_key
+ 
+ WHERE tdDt.date_id IS NOT NULL AND tmDt.date_key IS NULL
+
+
+END
+
+GO
+

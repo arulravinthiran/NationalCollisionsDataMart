@@ -1,0 +1,27 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  Table [dbo].[Tbl_data_Passenger]    Script Date: 12/09/2014 23:44:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_data_Passenger](
+	[passenger_id] [int] NOT NULL,
+	[date_xf] [datetime] NOT NULL,
+	[passenger_sequence_number] [nvarchar](255) NOT NULL,
+	[passenger_gender] [nvarchar](255) NOT NULL,
+	[passenger_age] [nvarchar](255) NOT NULL,
+	[passenger_age_range] [nvarchar](255) NOT NULL,
+	[passenger_position] [nvarchar](max) NOT NULL,
+	[passenger_road_user_class] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Tbl_data_Passenger] PRIMARY KEY CLUSTERED 
+(
+	[passenger_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

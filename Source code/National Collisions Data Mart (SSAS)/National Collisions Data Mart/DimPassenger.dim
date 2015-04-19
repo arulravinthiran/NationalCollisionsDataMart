@@ -1,0 +1,208 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="80256015-f595-46fe-a433-4f403564a0b8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tbl MIS Passenger</ID>
+  <Name>DimPassenger</Name>
+  <CreatedTimestamp>0001-01-01T05:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T05:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1091" scrolltop="-2884" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7223" y="9763" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Passenger" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5001" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000891300009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Passenger" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1091</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2884</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T05:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a9ca50fa-55eb-4e5c-bd86-a6a602746796">
+    <DataSourceViewID>dvNationalCollisionsDataMart</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="28e2b8c4-c3ab-45da-9c00-2af71f26d290">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="7ce80ef9-aba6-4965-96fd-5375cb42a877">
+      <ID>Passenger Key</ID>
+      <Name>Passenger Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9e2a1daa-bb13-4e80-ba8f-97f214c64e40">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0be4afa4-571f-4154-9fe5-2b88502d0327">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="13e4a285-a2d7-4efe-a7b0-7aa4c763a76f">
+          <AttributeID>Passenger Sequence Number</AttributeID>
+          <Name>Passenger Sequence Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="983ad848-0c08-485f-a62c-f22dfa48f95d">
+          <AttributeID>Passenger Gender</AttributeID>
+          <Name>Passenger Gender</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="399568a4-9b33-4664-ab68-c8e88b7ed95f">
+          <AttributeID>Passenger Age</AttributeID>
+          <Name>Passenger Age</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b0fb1d16-3792-4bdf-be8d-235eed2fb707">
+          <AttributeID>Passenger Age Range</AttributeID>
+          <Name>Passenger Age Range</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f81eae1a-de29-4532-93b3-ef98d5c04468">
+          <AttributeID>Passenger Position</AttributeID>
+          <Name>Passenger Position</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ef3de852-0520-4a5c-bd3a-fad0524694b2">
+          <AttributeID>Passenger Road User Class</AttributeID>
+          <Name>Passenger Road User Class</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2138dbe6-db58-41f3-aee2-cac999bc31b2">
+      <ID>Passenger Sequence Number</ID>
+      <Name>Passenger Sequence Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ffc5cc6d-0065-41ac-8228-52788f01a947">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3bc3b390-2fe1-4fda-ab5f-68b1eb65fa90">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_sequence_number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26202b32-9366-4e84-8354-d15a75b724ca">
+      <ID>Passenger Gender</ID>
+      <Name>Passenger Gender</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8924f5dd-bbb1-4c73-ba92-5d6e87a85860">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="576c2339-7279-4762-b63f-e56645a3e313">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_gender</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="07822909-cb1f-4ba9-bf8d-1b1b3995a9eb">
+      <ID>Passenger Age</ID>
+      <Name>Passenger Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d469eed5-1094-40f0-bf2a-c6977cae0aeb">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a2a71e44-2d25-49fe-8eb0-c83b32f23110">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4d965b9f-a836-4243-9476-7b84b7f15a7c">
+      <ID>Passenger Age Range</ID>
+      <Name>Passenger Age Range</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c2e10d12-7e4a-498d-8226-26b4ac54eb79">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d1e62e4-c904-46ff-9e8a-de2e9bf021f9">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_age_range</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7bb11e2-9253-43d0-9629-949f4208d947">
+      <ID>Passenger Position</ID>
+      <Name>Passenger Position</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a07ac5af-bfc3-4f50-8bd4-de27a09f7baf">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e8a7979-8d13-4e3b-b89e-c241c640dcf5">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_position</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b2b9b161-731f-4b51-9092-743e21712d10">
+      <ID>Passenger Road User Class</ID>
+      <Name>Passenger Road User Class</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2c8260b4-3fdf-41c7-b0a2-34d4cf449414">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="caeffcf2-b24f-4883-9b72-9cdfe96b7592">
+            <TableID>dbo_Tbl_MIS_Passenger</TableID>
+            <ColumnID>passenger_road_user_class</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

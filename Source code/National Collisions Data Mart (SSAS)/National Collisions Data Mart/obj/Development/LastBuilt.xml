@@ -1,0 +1,191 @@
+﻿<Infos>
+  <Item name="DimCollision.dim">
+    <Time>635537392035416840</Time>
+    <Hash length="16">
+      <b>90</b>
+      <b>225</b>
+      <b>140</b>
+      <b>203</b>
+      <b>54</b>
+      <b>185</b>
+      <b>245</b>
+      <b>196</b>
+      <b>234</b>
+      <b>127</b>
+      <b>125</b>
+      <b>142</b>
+      <b>19</b>
+      <b>22</b>
+      <b>31</b>
+      <b>213</b>
+    </Hash>
+  </Item>
+  <Item name="dsvNationalCollisionsDataMart.dsv">
+    <Time>635537392612719852</Time>
+    <Hash length="16">
+      <b>167</b>
+      <b>6</b>
+      <b>184</b>
+      <b>118</b>
+      <b>175</b>
+      <b>17</b>
+      <b>240</b>
+      <b>240</b>
+      <b>245</b>
+      <b>42</b>
+      <b>255</b>
+      <b>126</b>
+      <b>2</b>
+      <b>216</b>
+      <b>17</b>
+      <b>132</b>
+    </Hash>
+  </Item>
+  <Item name="DimPassenger.dim">
+    <Time>635537391731066304</Time>
+    <Hash length="16">
+      <b>200</b>
+      <b>110</b>
+      <b>27</b>
+      <b>118</b>
+      <b>92</b>
+      <b>183</b>
+      <b>234</b>
+      <b>69</b>
+      <b>201</b>
+      <b>211</b>
+      <b>145</b>
+      <b>1</b>
+      <b>84</b>
+      <b>121</b>
+      <b>158</b>
+      <b>252</b>
+    </Hash>
+  </Item>
+  <Item name="NationalCollisionsDataMart.cube">
+    <Time>635537405645697769</Time>
+    <Hash length="16">
+      <b>61</b>
+      <b>30</b>
+      <b>202</b>
+      <b>57</b>
+      <b>26</b>
+      <b>247</b>
+      <b>76</b>
+      <b>250</b>
+      <b>12</b>
+      <b>136</b>
+      <b>25</b>
+      <b>232</b>
+      <b>95</b>
+      <b>247</b>
+      <b>123</b>
+      <b>68</b>
+    </Hash>
+  </Item>
+  <Item name="DimVehicle.dim">
+    <Time>635537392148149039</Time>
+    <Hash length="16">
+      <b>44</b>
+      <b>90</b>
+      <b>197</b>
+      <b>188</b>
+      <b>128</b>
+      <b>86</b>
+      <b>119</b>
+      <b>209</b>
+      <b>48</b>
+      <b>79</b>
+      <b>252</b>
+      <b>63</b>
+      <b>71</b>
+      <b>245</b>
+      <b>254</b>
+      <b>80</b>
+    </Hash>
+  </Item>
+  <Item name="National Collisions Data Mart.database">
+    <Time>635533341704806469</Time>
+    <Hash length="16">
+      <b>233</b>
+      <b>51</b>
+      <b>152</b>
+      <b>3</b>
+      <b>70</b>
+      <b>204</b>
+      <b>244</b>
+      <b>57</b>
+      <b>121</b>
+      <b>93</b>
+      <b>109</b>
+      <b>114</b>
+      <b>165</b>
+      <b>79</b>
+      <b>37</b>
+      <b>197</b>
+    </Hash>
+  </Item>
+  <Item name="dsNationalCollisionsDataMart.ds">
+    <Time>635537393333045106</Time>
+    <Hash length="16">
+      <b>244</b>
+      <b>198</b>
+      <b>137</b>
+      <b>62</b>
+      <b>137</b>
+      <b>73</b>
+      <b>218</b>
+      <b>247</b>
+      <b>68</b>
+      <b>236</b>
+      <b>206</b>
+      <b>113</b>
+      <b>110</b>
+      <b>51</b>
+      <b>159</b>
+      <b>158</b>
+    </Hash>
+  </Item>
+  <Item name="DimDate.dim">
+    <Time>635537396603832854</Time>
+    <Hash length="16">
+      <b>32</b>
+      <b>225</b>
+      <b>96</b>
+      <b>250</b>
+      <b>13</b>
+      <b>216</b>
+      <b>9</b>
+      <b>225</b>
+      <b>74</b>
+      <b>103</b>
+      <b>138</b>
+      <b>173</b>
+      <b>215</b>
+      <b>240</b>
+      <b>97</b>
+      <b>76</b>
+    </Hash>
+  </Item>
+  <Item name="NationalCollisionsDataMart.partitions">
+    <Time>635536912003395261</Time>
+    <Hash length="16">
+      <b>168</b>
+      <b>1</b>
+      <b>3</b>
+      <b>22</b>
+      <b>43</b>
+      <b>67</b>
+      <b>124</b>
+      <b>188</b>
+      <b>208</b>
+      <b>46</b>
+      <b>208</b>
+      <b>93</b>
+      <b>161</b>
+      <b>177</b>
+      <b>13</b>
+      <b>5</b>
+    </Hash>
+  </Item>
+</Infos>

@@ -1,0 +1,52 @@
+USE [DW_NCDM]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_NCDM_passenger]    Script Date: 12/10/2014 00:47:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROC [dbo].[msp_NCDM_passenger] 
+AS
+BEGIN
+
+--generate surrogate key for every passenger_id
+
+INSERT INTO DW_MIS.dbo.Tbl_MIS_Lkp_Passenger (passenger_id)
+
+SELECT tdPgr.passenger_id
+FROM DW_DATA.dbo.Tbl_data_Passenger tdPgr LEFT JOIN
+ DW_MIS.dbo.Tbl_MIS_Lkp_Passenger tmPgr
+ 
+ ON tdPgr.passenger_id = tmPgr.passenger_id
+ 
+ WHERE tdPgr.passenger_id IS NOT NULL AND tmPgr.passenger_id  is NULL
+ 
+ --insert records into passenger dimension
+ INSERT INTO DW_MIS.dbo.Tbl_MIS_Passenger (passenger_key,passenger_sequence_number,
+ passenger_gender,passenger_age_range,passenger_position,passenger_road_user_class)
+
+SELECT tmlkPgr.passenger_key, tdPgr.passenger_sequence_number, tdPgr.passenger_gender,
+ tdPgr.passenger_age_range, tdPgr.passenger_position, tdPgr.passenger_road_user_class
+
+FROM DW_DATA.dbo.Tbl_data_Passenger tdPgr LEFT JOIN DW_MIS.dbo.Tbl_MIS_Lkp_Passenger tmlkPgr
+ ON tdPgr.passenger_id = tmlkPgr.passenger_id LEFT JOIN DW_MIS.dbo.Tbl_MIS_Passenger tmPgr
+  ON tmlkPgr.passenger_key = tmPgr.passenger_key
+ 
+ WHERE tdPgr.passenger_id IS NOT NULL AND tmlkPgr.passenger_id IS NOT NULL AND 
+  tmPgr.passenger_key IS NULL
+
+
+END
+
+
+
+
+
+
+GO
+

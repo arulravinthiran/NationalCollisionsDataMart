@@ -1,0 +1,183 @@
+USE [DW_DATA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_data_passenger]    Script Date: 12/09/2014 23:46:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROC [dbo].[msp_data_passenger] AS
+
+BEGIN
+
+--insert records from master table in staging layer to tbl_data_passenger
+INSERT INTO DW_DATA.dbo.Tbl_data_Passenger(passenger_id, date_xf, passenger_sequence_number, passenger_gender, passenger_age_range, passenger_position,passenger_road_user_class)
+
+SELECT tsMstr.passenger_id,  GETDATE() AS date_xf,
+
+        -- clean passenger sequence number
+         
+		 CASE tsMstr.passenger_sequence_number
+		  
+		  WHEN  'NN' THEN 'Data element in not applicable'  
+          WHEN  'UU' THEN 'Unknown'
+          ELSE tsMstr.passenger_sequence_number
+          END AS passenger_sequence_number,      
+         
+         --clean passenger gender
+         CASE tsMstr.passenger_gender
+           WHEN  'F' THEN 'Female'
+           WHEN  'M' THEN 'Male'
+           WHEN  'N' THEN 'Data element is not applicable'
+		   WHEN  'U' THEN 'Unknown'
+		   WHEN  'X' THEN  'Jurisdiction does not provide this data element'
+           ELSE tsMstr.passenger_gender
+           END AS passenger_gender ,
+           
+           --clean passenger age 
+		   CASE tsMstr.passenger_age_range
+              WHEN '1' THEN 'Less than 1 Year old'
+			  WHEN '99' THEN '99 years or older'
+			  WHEN 'NN' THEN 'Data element is not applicable'
+			  WHEN 'UU' THEN 'Unknown'
+			  WHEN 'XX' THEN 'Jurisdiction does not provide this data element'
+			  ELSE tsMstr.passenger_age_range
+           END AS passenger_age,
+           
+           --clean passenger position
+		 CASE tsMstr.passenger_position
+           WHEN '11' THEN 'Driver'
+           WHEN '12' THEN 'Front row, center'
+           WHEN '13' THEN 'Front row,right outboard,including motorcycle passenger in sidecar'
+           WHEN '21' THEN 'Second row,left outboard,including motorcycle passenger'
+           WHEN '22' THEN 'Second row,center'
+           WHEN '23' THEN 'Second row,right outboard'
+           WHEN '31' THEN 'Third row,left outboard'
+           WHEN '32' THEN 'Third row,center'
+           WHEN '33' THEN 'Third row,right outboard'
+           WHEN '96' THEN 'Position unknown, but the person was definately an occupant'
+           WHEN '97' THEN 'Sitting on someone''s lap'
+           WHEN '98' THEN 'Urban and intercity bus'
+           WHEN '99' THEN 'Pedestrian'
+           WHEN 'NN' THEN 'Data element is not applicable'
+           WHEN 'QQ' THEN 'Choice is other than the preceding value'
+           WHEN 'UU' THEN 'Unknown'
+           WHEN 'XX' THEN 'Jurisdiction does not provide this data element'
+		   ELSE tsMstr.passenger_position
+           END AS passenger_position_number, 
+           
+           --clean passenger road user class
+		   CASE tsMstr.passenger_road_user_class
+		      WHEN '1' THEN 'Motor Vehicle Driver'
+			  WHEN '2' THEN 'Motor vehicle passenger'
+			  WHEN '3' THEN 'Pedestrian'
+			  WHEN '4' THEN 'Bicyclist'
+			  WHEn '5' THEN  'Motorcyclist'
+			  WHEN 'U' THEN 'Not stated/Other/Unknown'
+			  ELSE tsMstr.passenger_road_user_class
+			  END AS passenger_road_user_class
+
+ FROM DW_STAGING.dbo.Tbl_staging_Passenger tsMstr LEFT JOIN DW_DATA.dbo.Tbl_data_Passenger tdVh
+
+ ON tsMstr.passenger_id = tdVh.passenger_id
+ WHERE tdVh.passenger_id IS NULL AND tsMstr.passenger_id IS NOT NULL
+
+
+ --log these changes in the log table
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_sequence_number','TBD after forming primary keys','NN','Data element is not applicable')
+ 
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_sequence_number','TBD after forming primary keys','UU','Unknown')
+ 
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_gender','TBD after forming primary keys','F','Female')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_gender','TBD after forming primary keys','M','Male')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_gender','TBD after forming primary keys','N', 'Not Applicable')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_gender','TBD after forming primary keys','U','Unknown')
+
+
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_gender','TBD after forming primary keys','X', 'data refused')
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_age_range','TBD after forming primary keys','00','Less than 1 years old')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_age_range','TBD after forming primary keys','99','99 years or older')
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_age_range','TBD after forming primary keys','NN','Data element is not applicable')
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_age_range','TBD after forming primary keys','UU','Unknown')
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_age_range','TBD after forming primary keys','XX','Jurisdiction does not provide this data element')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','11','Driver')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','12','Front row, center')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','13','Front row,right outboard,including motorcycle passenger in sidecar')
+
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','21','Second row,left outboard,including motorcycle passenger')
+
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','22','Second row,center')
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','23','Second row,right outboard')
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','31','Third row,left outboard')
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','32','Third row,center')
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','33','Third row,right outboard')
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','96','Position unknown, but the person was definately an occupant')
+
+  INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','97','Sitting on someone''s lapt')
+   INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','98','Urban and intercity bus')
+   INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','99','Pedestrian')
+   INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','NN','Data element is not applicable')
+   INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','QQ','Choice is other than the preceding value')
+   INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','UU','Unknown')
+    INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_position','TBD after forming primary keys','XX','Jurisdiction does not provide this data element')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','1','Motor Vehicle Driver')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','2','Motor Vehicle Passenger')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','3','Pedestrain')
+
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','4','Bicyclist')
+
+ INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','5','Motorcyclist')
+
+INSERT INTO DW_DATA.dbo.Tbl_data_logging(date_xf,log_category,table_name,column_name,record_identifier,given_value,changed_value)
+ VALUES( GETDATE(),'Substitution', 'DW_DATA.dbo.Tbl_data_Passenger','passenger_road_user_class','TBD after forming primary keys','U','Not stated/Other/Unknown')
+
+ END
+GO
+

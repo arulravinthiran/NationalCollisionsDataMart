@@ -1,0 +1,50 @@
+USE [DW_NCDM]
+GO
+
+/****** Object:  StoredProcedure [dbo].[msp_NCDM_vehicle]    Script Date: 12/10/2014 00:47:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROC [dbo].[msp_NCDM_vehicle] 
+AS
+BEGIN
+
+--generate surrogate key for every vehicle_id
+
+INSERT INTO DW_MIS.dbo.Tbl_MIS_Lkp_vehicle (vehicle_id)
+
+SELECT  tdVh.vehicle_id
+FROM DW_DATA.dbo.Tbl_data_Vehicle tdVh LEFT JOIN
+ DW_MIS.dbo.Tbl_MIS_Lkp_Vehicle tmlVh
+ 
+ ON tdVh.vehicle_id = tmlVh.vehicle_id
+ 
+ WHERE tdVh.vehicle_id IS NOT NULL AND tmlVh.vehicle_id  is NULL
+ 
+ --insert records into vehicle dimension
+ INSERT INTO DW_MIS.dbo.Tbl_MIS_vehicle (vehicle_key, vehicle_sequence_number,
+ vehicle_type,vehicle_model_year)
+
+SELECT tmlkVh.vehicle_key, tdVh.vehicle_sequence_number, tdVh.vehicle_type, tdVh.vehicle_model_year
+
+FROM DW_DATA.dbo.Tbl_data_Vehicle tdVh LEFT JOIN DW_MIS.dbo.Tbl_MIS_Lkp_Vehicle tmlkVh
+ ON tdVh.vehicle_id= tmlkVh.vehicle_id LEFT JOIN DW_MIS.dbo.Tbl_MIS_Vehicle tmVh
+  ON tmlkVh.vehicle_key = tmVh.vehicle_key
+ 
+ WHERE tdVh.vehicle_id IS NOT NULL AND tmVh.vehicle_key IS NULL AND tmlkVh.vehicle_id IS NOT NULL
+
+
+END
+
+
+
+
+
+
+GO
+

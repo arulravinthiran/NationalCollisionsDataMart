@@ -1,0 +1,515 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="53312907-5496-48ee-a23a-f7978514ce32" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>cbeNationalCollisionsDataMart</ID>
+  <Name>NationalCollisionsDataMart</Name>
+  <CreatedTimestamp>0001-01-01T05:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T05:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="20" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1412" scrolltop="2052" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="19553" y="9604" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Collision" left="6256" top="12525" logicalid="10" controlid="1" masterid="0" hint1="0" hint2="0" width="6033" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000911700009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Collision" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Date" left="20" top="5125" logicalid="11" controlid="2" masterid="0" hint1="0" hint2="0" width="3651" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000430e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Fact" left="6071" top="5125" logicalid="12" controlid="3" masterid="0" hint1="0" hint2="0" width="6403" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000319000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Fact" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Vehicle" left="6970" top="0" logicalid="13" controlid="4" masterid="0" hint1="0" hint2="0" width="4604" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000fc110000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Vehicle" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Tbl_MIS_Passenger" left="14874" top="5627" logicalid="14" controlid="5" masterid="0" hint1="0" hint2="0" width="5001" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000891300009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Tbl_MIS_Passenger" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8873" top="9825" logicalid="15" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Collision]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="10" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9272" y="12525" />
+              <point x="9272" y="10125" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3371" top="7226" logicalid="16" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Date]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="23" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3671" y="7625" />
+              <point x="6071" y="7625" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12174" top="7225" logicalid="17" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Passenger]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="3" sourceattachpoint="24" destattachpoint="31" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14874" y="7624" />
+              <point x="13674" y="7624" />
+              <point x="13674" y="7625" />
+              <point x="12474" y="7625" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8873" top="2226" logicalid="18" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Tbl_MIS_Fact_Tbl_MIS_Vehicle]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="9" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9272" y="2725" />
+              <point x="9272" y="5125" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1412</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>2052</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T05:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="6f44c1f0-46c0-4cdd-b08b-94594a6d7045">
+      <ID>Tbl MIS Passenger</ID>
+      <Name>Tbl MIS Passenger</Name>
+      <DimensionID>Tbl MIS Passenger</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7dc45767-3bfb-45a0-9419-a4084118bb07">
+          <AttributeID>Passenger Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a8a3d7b1-5873-4f62-9213-31ccf3ae99bd">
+          <AttributeID>Passenger Sequence Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="54865050-7b16-4827-b544-e28bef1ef03f">
+          <AttributeID>Passenger Gender</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4736cd4a-f732-41ff-8b47-8912d8fd3442">
+          <AttributeID>Passenger Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="51598a6d-87fc-462d-8af6-c9379d478437">
+          <AttributeID>Passenger Age Range</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="87242c7d-b85b-45ff-a86b-ee7ee1cfd54e">
+          <AttributeID>Passenger Position</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8714ec31-a5f9-47fe-b364-d356a2ebc73a">
+          <AttributeID>Passenger Road User Class</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="763af2b5-f249-473a-9a4c-19f4a788e654">
+      <ID>DimensionDate</ID>
+      <Name>DimensionDate</Name>
+      <DimensionID>DimensionDate</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a5601578-568d-4e34-a692-a9ab8d06d9dc">
+          <AttributeID>Date Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7fc6ce2b-2671-4357-a394-a5b77d312e32">
+          <AttributeID>Day Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="470a499f-2ea8-4045-ab7d-84ff626f4df2">
+          <AttributeID>Day Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="29c0f4a5-0c5e-43cf-8a2c-95389555a2cb">
+          <AttributeID>Day Abbrev</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cd7803b4-4627-4a38-8e89-8e201d6034cf">
+          <AttributeID>Weekday Flag</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c84fe559-71c0-4907-a5c2-5a1aec1330e9">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="010c7895-5cbe-40b3-8f44-ac8abf2b40c8">
+          <AttributeID>Month Num Overall</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a2c374c5-6615-419c-9180-16afbf92758e">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b9786dd9-c3e0-4b69-aefe-ad4d0d086a00">
+          <AttributeID>Month Abbrev</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="848c8b01-f2d0-44e4-b4c3-9c0d87e4c9a1">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e22da96-eacc-45a5-a5ba-0a2c58b5cb31">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f9dc4d7a-4a41-4db3-90f3-be2579831b84">
+          <AttributeID>Yearmo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b36f1fa6-0aa5-4453-84b3-47183daeb8a1">
+          <AttributeID>Fiscal Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="41efdb41-c809-4f1e-9732-55955e23a014">
+          <AttributeID>Fiscal Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="055598a0-55a7-497e-822a-34d8375fa5de">
+          <AttributeID>Fiscal Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="16bf9161-2564-406d-a407-d7a00c7d21ba">
+          <AttributeID>Season Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="42b11a0f-71d5-4d97-814a-254299b1f050">
+          <AttributeID>Season</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="ec9d7b28-b0eb-4b74-a33e-f668a4f8c630">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="9af27638-067a-4cf0-ac7f-cbfe81507e37">
+      <ID>Tbl MIS Collision</ID>
+      <Name>Tbl MIS Collision</Name>
+      <DimensionID>Tbl MIS Collision</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="25374ee4-6d51-439e-aa9d-8fe7aa93c15f">
+          <AttributeID>Collision Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b10e6f3d-bbd7-4d2b-bef2-6de50bcbe546">
+          <AttributeID>Collision Configuration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e132bf4c-8100-49fb-af5e-975094f75c7c">
+          <AttributeID>Collision Road Alignment Configuration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c60ce46-f578-4036-9853-69ab9a4921e7">
+          <AttributeID>Collision Road Surface Configuration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="35901da8-c51d-4667-a70d-f8355b89e84d">
+          <AttributeID>Collision Roadway Configuration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8035ab47-8be4-4306-bb29-646339602720">
+          <AttributeID>Collision Traffic Control Configuration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="00d46d52-12d9-44ba-aa6e-d41bbcfb287f">
+          <AttributeID>Collision Weather Configuration</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="60196eb8-3d1d-415a-ac50-ae5fc35533cc">
+      <ID>Tbl MIS Vehicle</ID>
+      <Name>Tbl MIS Vehicle</Name>
+      <DimensionID>Tbl MIS Vehicle</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a3c2f8d6-10e7-40b9-9473-fe3f0c005059">
+          <AttributeID>Vehicle Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2ab6d5d9-045a-4602-bd93-93fa1fba3f10">
+          <AttributeID>Vehicle Sequence Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b43d6d00-ce25-43ad-8ecb-74ce9ce4fc5b">
+          <AttributeID>Vehicle Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6da15821-d9c8-4a9e-a5e7-7c1008309b8c">
+          <AttributeID>Vehicle Model Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="579fe9d5-b40a-463f-8594-24108d23ef91">
+      <ID>Tbl MIS Fact</ID>
+      <Name>Tbl MIS Fact</Name>
+      <CreatedTimestamp>0001-01-01T05:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T05:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T05:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="4ae3b18a-b093-4f5f-839e-a8aecc473e51">
+          <ID>Fact Safety Device</ID>
+          <Name>Safety Device</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="fc086660-5795-47d4-bdbb-860db6383aa1">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0930fc66-9322-40bc-82a7-4093a72446a1">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_safety_device</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="76c1e7ce-df46-49ad-9f41-83d6a751769d">
+          <ID>Fact Medical Treatment</ID>
+          <Name>Medical Treatment</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="8c51c6ff-bf67-47ca-991b-20a0e5a63d1f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="96c4c59f-d5ee-4885-9b2c-b1c8ecf6333a">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_medical_treatment</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="43863299-a616-418e-9a6f-913dfd5d2243">
+          <ID>Fact Collision Severity</ID>
+          <Name>Collision Severity</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="55e7de09-58fd-4f5c-8649-b7ca19e327b3">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="25a66347-e549-4dd3-a0b3-a2f6263d6a06">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_collision_severity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aa26f77e-0d66-403e-9102-f12de0121aae">
+          <ID>Fact Collision No Of Vehicles</ID>
+          <Name>Total number of vehicles collided</Name>
+          <Source dwd:design-time-name="2d9b0b54-0d0b-4478-9bf1-cd006ad91896">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7d61971a-191e-4b1b-ab5f-41ba85f6e35b">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_collision_no_of_vehicles</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="94172bd4-bd9f-48a4-acdd-6780134ae311">
+          <ID>Fact Collision Hour</ID>
+          <Name>Collision Hour</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="625f6240-1e0c-4a01-bf30-0f0e96d7b54b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d871903f-3f99-4fa9-894f-4c14f4e83582">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_collision_hour</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a6d10918-ab0c-4325-919f-203ddc7aa188">
+          <ID>Fact Fatal Collision Flag</ID>
+          <Name>Number of fatal collisions</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="d16a55a6-250d-46cb-b542-fdd5d8d419b1">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5692fbe8-1973-49b4-9338-52386ae2f88c">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_fatal_collision_flag</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1753d3f8-571c-4da3-855e-57517f315830">
+          <ID>Fact Non Fatal Collision Flag</ID>
+          <Name>Number of non fatal collisions</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="48418ccf-70f8-42be-9793-0ce1df1d9164">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="15fe72c3-af4c-4ef1-a0e4-01083ab84e67">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+              <ColumnID>fact_non_fatal_collision_flag</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9bf57d7f-7634-4cf0-b105-00805206bfd6">
+          <ID>Tbl MIS Fact Count</ID>
+          <Name>Number of Collisions</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="2e7e2ece-db5c-40c6-ab18-b35883f0fa64">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4e069700-1b78-4d03-89f1-4fe2856d2fbf">
+              <TableID>dbo_Tbl_MIS_Fact</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="436bb3a3-ed05-415b-a094-1e6eb70857ef">
+          <CubeDimensionID>Tbl MIS Passenger</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a2b45e14-1bd7-4726-a8b6-57a6dddbb96d">
+              <AttributeID>Passenger Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="74cc9e4e-c309-4413-a68b-8898c9f0bd60">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cf5892c1-ce7e-4eaa-97b4-ee33fa473f16">
+                    <TableID>dbo_Tbl_MIS_Fact</TableID>
+                    <ColumnID>passenger_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="65f61c75-f93e-452e-b9ef-9bb394093b8b">
+          <CubeDimensionID>DimensionDate</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2684b5f9-c03a-4aa4-a6f1-4dd0ea01a89c">
+              <AttributeID>Date Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="dc24871b-6bcf-43d9-944c-f19541d4fc28">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="73e6b73b-4e96-462e-918c-ce7e484c710c">
+                    <TableID>dbo_Tbl_MIS_Fact</TableID>
+                    <ColumnID>date_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9f13a01a-8fa7-46f0-9317-f9e78c17566b">
+          <CubeDimensionID>Tbl MIS Collision</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e28fb5f6-4dd1-4e24-a99c-f0de56c97143">
+              <AttributeID>Collision Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0fdb04c1-20a0-4099-8726-6787e8decff6">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5600fddf-6e2c-499d-aed6-2780c4383be5">
+                    <TableID>dbo_Tbl_MIS_Fact</TableID>
+                    <ColumnID>collision_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e5f89906-ed3a-48ce-99b3-efc4f0484bb9">
+          <CubeDimensionID>Tbl MIS Vehicle</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="86a1cb41-d834-4e45-aaa4-f99d38e638cd">
+              <AttributeID>Vehicle Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fcabf458-ef8b-4a92-b19e-7d7ca6eec6f0">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8758be45-2fc2-45a5-893e-1a822864f03d">
+                    <TableID>dbo_Tbl_MIS_Fact</TableID>
+                    <ColumnID>vehicle_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="304ea764-aa42-4e6c-a153-1b9b0ab091f2">
+    <DataSourceViewID>dvNationalCollisionsDataMart</DataSourceViewID>
+  </Source>
+</Cube>

@@ -1,0 +1,26 @@
+USE [DW_STAGING]
+GO
+
+/****** Object:  Table [dbo].[Tbl_staging_Passenger]    Script Date: 12/10/2014 00:50:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tbl_staging_Passenger](
+	[passenger_id] [int] IDENTITY(21000,1) NOT NULL,
+	[date_xf] [datetime] NOT NULL,
+	[passenger_sequence_number] [nchar](20) NOT NULL,
+	[passenger_gender] [nchar](20) NOT NULL,
+	[passenger_age_range] [nchar](20) NOT NULL,
+	[passenger_position] [nchar](20) NOT NULL,
+	[passenger_road_user_class] [nchar](20) NOT NULL,
+ CONSTRAINT [PK_Tbl_data_Passenger] PRIMARY KEY CLUSTERED 
+(
+	[passenger_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
